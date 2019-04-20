@@ -1,11 +1,18 @@
-<header class="header">
-  <p class="header-title">
-    <a ui-sref="home">Home</a>
-    <a ui-sref="login" ng-if="!vm.isAuthenticated">Login</a>
-    <a ui-sref="dashboard" ng-if="vm.isAuthenticated">Dashboard</a>
-    <span class="pull-right" style="color: white;" ng-if="vm.isAuthenticated">Welcome {{vm.username}} {{$root.isAuthenticated}}</span>
-    <div class="btn btn-default" ng-click="vm.logout()" ng-if="vm.isAuthenticated">logout</div>
-    <!--div class="btn btn-default" ng-if="isAuthenticated">isAuth</div>
-    <div class="btn btn-default" ng-if="!isAuthenticated">isNotAuth</div-->
-  </p>
-</header>
+<nav class="navbar navbar-static-top navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" ui-sref="app">
+        <span class="fa fa-home"></span> Monitoring Web App
+      </a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+      <ul class="nav navbar-nav">
+        <li ui-sref-active="active"><a ui-sref="police">Police</a></li>
+        <li ui-sref-active="active"><a ui-sref="ambulance">Ambulance</a></li>
+        <li ui-sref-active="active"><a ui-sref="firefighter">Firefighter</a></li>
+      </ul>
+    </div>
+
+  </div>
+</nav>

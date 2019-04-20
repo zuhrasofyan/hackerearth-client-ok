@@ -1,0 +1,33 @@
+<div class="">
+  <fountain-header></fountain-header>
+  <main class="main">
+    <div class="title">
+      <h1 class="title-h1">Welcome, Police</h1>
+      <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Latitude</th>
+              <th>Longitude</th>
+              <th>Image URL</th>
+              <th>Status</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody ng-repeat="data in vm.data | orderBy: '-createdAt'" ng-show="data.category !='floods'">
+            <tr>
+              <td>{{data.category}}</td>
+              <td>{{data.lat}}</td>
+              <td>{{data.lon}}</td>
+              <td><a href="{{data.imageUrl}}" target="_blank"><b>image</b></a></td>
+              <td>{{data.status}}</td>
+              <td>{{data.createdAt | date:'MM/dd/yyyy @ h:mma'}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+  <fountain-footer></fountain-footer>
+</div>
